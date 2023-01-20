@@ -1,0 +1,15 @@
+img{
+    width: 20%;
+    height: 10%;
+    margin-left: 40%;
+    margin-top: 0;
+}
+#code{
+    font-size: 100px;
+    color: rgb(117, 109, 109);
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@600;700;800&family=Rubik:wght@500&display=swap'); 
+h1{
+    font-family: 'Poppins', sans-serif;
+}
