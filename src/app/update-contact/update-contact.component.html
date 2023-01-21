@@ -12,42 +12,42 @@
                 voluptatem natus temporibus nemo!</p>
         </div>
     </div>
+    {{contact|json}}
     <div class="container">
         <div class="row">
             <div class="col-md-8">
                 <form>
                     <div class="mb-2">
-                        <input type="text" placeholder="Name" class="form-control">
+                        <input name="contactname" [(ngModel)]="contact.name" type="text" placeholder="Name" class="form-control">
                     </div>
                     <div class="mb-2">
-                        <input type="text" placeholder="photo URL" class="form-control">
+                        <input name="photo" [(ngModel)]="contact.photo" type="text" placeholder="photo URL" class="form-control">
                     </div>
                     <div class="mb-2">
-                        <input type="text" placeholder="Email ID" class="form-control">
+                        <input name="email" [(ngModel)]="contact.email" type="text" placeholder="Email ID" class="form-control">
                     </div>
                     <div class="mb-2">
-                        <input type="text" placeholder="mobile number" class="form-control">
+                        <input name="mobile" [(ngModel)]="contact.mobile" type="text" placeholder="mobile number" class="form-control">
                     </div>
                     <div class="mb-2">
-                        <input type="text" placeholder="company Name" class="form-control">
+                        <input name="company" [(ngModel)]="contact.company" type="text" placeholder="company Name" class="form-control">
                     </div>
                     <div class="mb-2">
-                        <input type="text" placeholder="Title" class="form-control">
+                        <input name="Title" [(ngModel)]="contact.title" type="text" placeholder="Title" class="form-control">
                     </div>
                     <div class="mb-2">
-                        <select name="" id="" class="form-control">
+                        <select name="groupId" [(ngModel)]="contact.groupId" id="" class="form-control">
                             <option value="" selected hidden disabled>select A group</option>
-                            <option value="">family</option>
-                            <option value="">friends</option>
+                            <option value="groupId" *ngFor="let group of groups">{{group.name}}</option>
                         </select>
                     </div>
                 </form>
             </div>
             <div class="col-4">
-                <img src="https://www.clipartmax.com/png/middle/144-1448519_account-boss-boy-businessman-man-manager-user-human-vector-icon-png.png"
+                <img [src]="contact.photo"
                     alt="no img" class="contactimg1 ms-5 mb-5">
                 <div class="ms-5">
-                <input type="button" value="Update" placeholder="Create" class="btn btn-success">
+                <input (click)="updateContact()" type="button" value="Update" placeholder="Create" class="btn btn-success">
                 <a routerLink="/" class="btn btn-danger ms-5">Close</a>
                 </div>
             </div>

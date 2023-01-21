@@ -25,7 +25,7 @@ export class ApiService {
     return this.http.get('http://localhost:3000/groups/'+groupId)
   }
 
-  
+
   //fetch all groups from groups from http://localhost:3000/groups
   getAllGroups(){
     return this.http.get('http://localhost:3000/groups')
@@ -35,5 +35,13 @@ export class ApiService {
   //api call for create an account to server
   addContact(contactBody:any){
     return this.http.post(this.baseurl,contactBody)
+  }
+  //function for delete contact
+  deleteContact(contactId:any){
+    return this.http.delete(`${this.baseurl}/${contactId}`)
+  }
+  //function for update contact
+  updateContact(contactId:any,contactBody:any){
+    return this.http.put(`${this.baseurl}/${contactId}`,contactBody)
   }
 }

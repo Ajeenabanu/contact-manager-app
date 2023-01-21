@@ -17,6 +17,14 @@ export class ContactManagerComponent implements OnInit {
 
   constructor(private api:ApiService){}
   ngOnInit(): void {
+    // this.api.getAllContacts().subscribe((data:any)=>{
+    //   this.allContacts=data
+    //   console.log(data);
+    // })
+    this.getAllContact()
+  }
+  //get all contact
+  getAllContact(){
     this.api.getAllContacts().subscribe((data:any)=>{
       this.allContacts=data
       console.log(data);
@@ -28,6 +36,11 @@ export class ContactManagerComponent implements OnInit {
   console.log(events.target.value);
   this.searchkey=events.target.value
  }
-
+ deleteContact(contactId:any){
+  this.api.deleteContact(contactId)
+  .subscribe((data:any)=>{
+    this.getAllContact()
+  })
+ }
  
 }
